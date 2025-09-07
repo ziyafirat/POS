@@ -36,7 +36,7 @@ class AssistantView extends GetView<AssistantController> {
                       style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(height: 8),
-                    Obx(() => Text(controller.connectionStatus)),
+                    Text(controller.connectionStatus),
                   ],
                 ),
               ),
