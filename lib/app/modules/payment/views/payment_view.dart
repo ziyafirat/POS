@@ -86,7 +86,7 @@ class PaymentView extends GetView<PaymentController> {
     bool isLoading,
   ) {
     return Container(
-      width: double.infinity,
+      width: 280,
       height: 100,
       margin: const EdgeInsets.symmetric(vertical: 8),
       child: ElevatedButton(

@@ -159,6 +159,7 @@ class AssistantView extends GetView<AssistantController> {
               children: [
                 Expanded(
                   child: Container(
+                    width: 150,
                     height: 60,
                     margin: const EdgeInsets.only(right: 8),
                     child: ElevatedButton(
@@ -182,6 +183,7 @@ class AssistantView extends GetView<AssistantController> {
                 const SizedBox(width: 16),
                 Expanded(
                   child: Container(
+                    width: 150,
                     height: 60,
                     margin: const EdgeInsets.only(left: 8),
                     child: ElevatedButton(

@@ -50,7 +50,7 @@ class ErrorView extends GetView<ErrorController> {
               Column(
                 children: [
                   Container(
-                    width: double.infinity,
+                    width: 200,
                     height: 60,
                     margin: const EdgeInsets.symmetric(vertical: 8),
                     child: ElevatedButton(
@@ -72,7 +72,7 @@ class ErrorView extends GetView<ErrorController> {
                   ),
                   const SizedBox(height: 16),
                   Container(
-                    width: double.infinity,
+                    width: 200,
                     height: 60,
                     margin: const EdgeInsets.symmetric(vertical: 8),
                     child: ElevatedButton(
@@ -94,7 +94,7 @@ class ErrorView extends GetView<ErrorController> {
                   ),
                   const SizedBox(height: 16),
                   Container(
-                    width: double.infinity,
+                    width: 200,
                     height: 60,
                     margin: const EdgeInsets.symmetric(vertical: 8),
                     child: OutlinedButton(

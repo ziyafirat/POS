@@ -110,7 +110,7 @@ class AlertView extends GetView<AlertController> {
               ),
               const SizedBox(height: 24),
               Container(
-                width: double.infinity,
+                width: 200,
                 height: 60,
                 margin: const EdgeInsets.symmetric(vertical: 8),
                 child: ElevatedButton(

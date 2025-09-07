@@ -104,6 +104,7 @@ class ItemScanView extends GetView<ItemScanController> {
                   children: [
                     Expanded(
                       child: Container(
+                        width: 180,
                         height: 60,
                         margin: const EdgeInsets.only(right: 8),
                         child: ElevatedButton(
@@ -127,6 +128,7 @@ class ItemScanView extends GetView<ItemScanController> {
                     const SizedBox(width: 16),
                     Expanded(
                       child: Container(
+                        width: 180,
                         height: 60,
                         margin: const EdgeInsets.only(left: 8),
                         child: Obx(() => ElevatedButton(
