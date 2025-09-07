@@ -109,16 +109,25 @@ class AlertView extends GetView<AlertController> {
                 ),
               ),
               const SizedBox(height: 24),
-              SizedBox(
+              Container(
                 width: double.infinity,
+                height: 60,
+                margin: const EdgeInsets.symmetric(vertical: 8),
                 child: ElevatedButton(
                   onPressed: controller.acknowledgeAlert,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: controller.alertColor,
                     foregroundColor: Colors.white,
-                    padding: const EdgeInsets.symmetric(vertical: 16),
+                    elevation: 2,
+                    shadowColor: Colors.black26,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(4)),
+                    ),
                   ),
-                  child: const Text('Acknowledge'),
+                  child: const Text(
+                    'Acknowledge',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                  ),
                 ),
               ),
             ],

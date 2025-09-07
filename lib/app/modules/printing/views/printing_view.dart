@@ -69,14 +69,26 @@ class PrintingView extends GetView<PrintingController> {
               ),
               const SizedBox(height: 40),
               Obx(() => !controller.isPrinting.value
-                  ? ElevatedButton(
-                      onPressed: controller.skipPrinting,
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.purple.shade700,
-                        foregroundColor: Colors.white,
-                        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                  ? Container(
+                      width: 200,
+                      height: 60,
+                      margin: const EdgeInsets.symmetric(vertical: 8),
+                      child: ElevatedButton(
+                        onPressed: controller.skipPrinting,
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.purple.shade700,
+                          foregroundColor: Colors.white,
+                          elevation: 2,
+                          shadowColor: Colors.black26,
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(4)),
+                          ),
+                        ),
+                        child: const Text(
+                          'Continue',
+                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                        ),
                       ),
-                      child: const Text('Continue'),
                     )
                   : const SizedBox.shrink()),
             ],

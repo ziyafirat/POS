@@ -85,16 +85,19 @@ class PaymentView extends GetView<PaymentController> {
     VoidCallback onPressed,
     bool isLoading,
   ) {
-    return SizedBox(
+    return Container(
       width: double.infinity,
-      height: 80,
+      height: 100,
+      margin: const EdgeInsets.symmetric(vertical: 8),
       child: ElevatedButton(
         onPressed: isLoading ? null : onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: color,
           foregroundColor: Colors.white,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
+          elevation: 2,
+          shadowColor: Colors.black26,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(4)),
           ),
         ),
         child: isLoading
@@ -102,11 +105,11 @@ class PaymentView extends GetView<PaymentController> {
             : Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(icon, size: 32),
-                  const SizedBox(width: 16),
+                  Icon(icon, size: 36),
+                  const SizedBox(width: 20),
                   Text(
                     title,
-                    style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontSize: 26, fontWeight: FontWeight.w600),
                   ),
                 ],
               ),

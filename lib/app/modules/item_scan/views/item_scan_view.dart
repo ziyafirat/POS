@@ -103,29 +103,51 @@ class ItemScanView extends GetView<ItemScanController> {
                 Row(
                   children: [
                     Expanded(
-                      child: ElevatedButton(
-                        onPressed: controller.simulateScanItem,
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.green,
-                          foregroundColor: Colors.white,
-                          padding: const EdgeInsets.symmetric(vertical: 16),
+                      child: Container(
+                        height: 60,
+                        margin: const EdgeInsets.only(right: 8),
+                        child: ElevatedButton(
+                          onPressed: controller.simulateScanItem,
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.green.shade600,
+                            foregroundColor: Colors.white,
+                            elevation: 2,
+                            shadowColor: Colors.black26,
+                            shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(4)),
+                            ),
+                          ),
+                          child: const Text(
+                            'Simulate Scan Item',
+                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                          ),
                         ),
-                        child: const Text('Simulate Scan Item'),
                       ),
                     ),
                     const SizedBox(width: 16),
                     Expanded(
-                      child: Obx(() => ElevatedButton(
-                        onPressed: controller.isLoading.value ? null : controller.finishScanning,
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.blue.shade700,
-                          foregroundColor: Colors.white,
-                          padding: const EdgeInsets.symmetric(vertical: 16),
-                        ),
-                        child: controller.isLoading.value
-                            ? const CircularProgressIndicator(color: Colors.white)
-                            : const Text('Finish & Pay'),
-                      )),
+                      child: Container(
+                        height: 60,
+                        margin: const EdgeInsets.only(left: 8),
+                        child: Obx(() => ElevatedButton(
+                          onPressed: controller.isLoading.value ? null : controller.finishScanning,
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.blue.shade700,
+                            foregroundColor: Colors.white,
+                            elevation: 2,
+                            shadowColor: Colors.black26,
+                            shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(4)),
+                            ),
+                          ),
+                          child: controller.isLoading.value
+                              ? const CircularProgressIndicator(color: Colors.white)
+                              : const Text(
+                                  'Finish & Pay',
+                                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                                ),
+                        )),
+                      ),
                     ),
                   ],
                 ),

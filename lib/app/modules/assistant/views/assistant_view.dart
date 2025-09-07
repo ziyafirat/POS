@@ -59,21 +59,29 @@ class AssistantView extends GetView<AssistantController> {
                 itemCount: controller.testActions.length,
                 itemBuilder: (context, index) {
                   final action = controller.testActions[index];
-                  return Obx(() => ElevatedButton(
-                    onPressed: controller.isLoading.value
-                        ? null
-                        : () => controller.executeTestAction(
-                              action['name']!,
-                              action['action']!,
-                            ),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.teal.shade600,
-                      foregroundColor: Colors.white,
-                    ),
-                    child: Text(
-                      action['name']!,
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(fontSize: 12),
+                  return Obx(() => Container(
+                    margin: const EdgeInsets.all(2),
+                    child: ElevatedButton(
+                      onPressed: controller.isLoading.value
+                          ? null
+                          : () => controller.executeTestAction(
+                                action['name']!,
+                                action['action']!,
+                              ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.teal.shade600,
+                        foregroundColor: Colors.white,
+                        elevation: 2,
+                        shadowColor: Colors.black26,
+                        shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(4)),
+                        ),
+                      ),
+                      child: Text(
+                        action['name']!,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
+                      ),
                     ),
                   ));
                 },
@@ -150,26 +158,48 @@ class AssistantView extends GetView<AssistantController> {
             Row(
               children: [
                 Expanded(
-                  child: ElevatedButton(
-                    onPressed: controller.goToStart,
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue.shade700,
-                      foregroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(vertical: 16),
+                  child: Container(
+                    height: 60,
+                    margin: const EdgeInsets.only(right: 8),
+                    child: ElevatedButton(
+                      onPressed: controller.goToStart,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue.shade700,
+                        foregroundColor: Colors.white,
+                        elevation: 2,
+                        shadowColor: Colors.black26,
+                        shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(4)),
+                        ),
+                      ),
+                      child: const Text(
+                        'Go to Start',
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                      ),
                     ),
-                    child: const Text('Go to Start'),
                   ),
                 ),
                 const SizedBox(width: 16),
                 Expanded(
-                  child: ElevatedButton(
-                    onPressed: controller.goToItemScan,
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green.shade700,
-                      foregroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(vertical: 16),
+                  child: Container(
+                    height: 60,
+                    margin: const EdgeInsets.only(left: 8),
+                    child: ElevatedButton(
+                      onPressed: controller.goToItemScan,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green.shade700,
+                        foregroundColor: Colors.white,
+                        elevation: 2,
+                        shadowColor: Colors.black26,
+                        shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(4)),
+                        ),
+                      ),
+                      child: const Text(
+                        'Go to Scan',
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                      ),
                     ),
-                    child: const Text('Go to Scan'),
                   ),
                 ),
               ],

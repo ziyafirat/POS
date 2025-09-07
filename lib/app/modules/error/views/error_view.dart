@@ -49,41 +49,69 @@ class ErrorView extends GetView<ErrorController> {
               const SizedBox(height: 40),
               Column(
                 children: [
-                  SizedBox(
+                  Container(
                     width: double.infinity,
+                    height: 60,
+                    margin: const EdgeInsets.symmetric(vertical: 8),
                     child: ElevatedButton(
                       onPressed: controller.retry,
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.blue.shade700,
                         foregroundColor: Colors.white,
-                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        elevation: 2,
+                        shadowColor: Colors.black26,
+                        shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(4)),
+                        ),
                       ),
-                      child: const Text('Try Again'),
+                      child: const Text(
+                        'Try Again',
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                      ),
                     ),
                   ),
                   const SizedBox(height: 16),
-                  SizedBox(
+                  Container(
                     width: double.infinity,
+                    height: 60,
+                    margin: const EdgeInsets.symmetric(vertical: 8),
                     child: ElevatedButton(
                       onPressed: controller.goToStart,
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.green.shade700,
                         foregroundColor: Colors.white,
-                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        elevation: 2,
+                        shadowColor: Colors.black26,
+                        shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(4)),
+                        ),
                       ),
-                      child: const Text('Start Over'),
+                      child: const Text(
+                        'Start Over',
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                      ),
                     ),
                   ),
                   const SizedBox(height: 16),
-                  SizedBox(
+                  Container(
                     width: double.infinity,
+                    height: 60,
+                    margin: const EdgeInsets.symmetric(vertical: 8),
                     child: OutlinedButton(
                       onPressed: controller.goToAssistant,
                       style: OutlinedButton.styleFrom(
                         foregroundColor: Colors.grey.shade700,
-                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        side: BorderSide(color: Colors.grey.shade400, width: 2),
+                        elevation: 1,
+                        shadowColor: Colors.black12,
+                        shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(4)),
+                        ),
                       ),
-                      child: const Text('Assistant Mode'),
+                      child: const Text(
+                        'Assistant Mode',
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                      ),
                     ),
                   ),
                 ],
